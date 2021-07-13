@@ -1,1 +1,35 @@
-# ubuntu
+# How to install Ubuntu 20.04 + VScode + Anaconda + Git + ZSH
+## Table of Contents
+-[Installing Ubuntu]()
+  - From Mac
+  - From Windows
+  - From Linux
+- [VSCode](#VSCode)
+  - [Requirements](#requirements-2)
+  - [Installing](#installing)
+    - [Method1 Using Setup File](#method1-using-setup-files)
+    - [Method2 Using Windows Package Manager](#method2-using-windows-package-manager)
+  - [Configuring](#configuring)
+  - [Extensions](#extensions)
+    - [Best Extensions](#best-extensions)
+- [Anaconda](#anaconda)
+  - [Installing](#installing-2)
+  - [Conda init](#conda-init)
+- [Git](#git)
+- [ZSH](#ZSH)
+  - [Installing](#installing-3)
+  - [Installing oh-my-zsh](#installing-oh-my-zsh)
+  - [Conda init](#onda-init-1)
+  - [ZSH Plugins](#zsh-plugins)
+    - [fuzzy finder fzf](#fuzzy-finder-fzf)
+    - [autojump](#autojump)
+    - [zsh-autosuggestions](#zsh-autosuggestions)
+    - [enhancd](#enhancd)
+    - [zsh-completions](#zsh-completions)
+    - [fast Syntax Highlighting](#fast-syntax-highlighting)
+    - [git, docker, colored-man-pages, colorize, dash & command-not-found](#git-docker-colored-man-pages-colorize-dash--command-not-found)
+  - [ZSH Themes](#zsh-themes)
+    - [PowerLevel10K](#Installing-PowerLevel10K)
+    - [Agnoster](#agnoster)
+    - [robbyrussell](#robbyrussell)
+- VIM => coming soon
