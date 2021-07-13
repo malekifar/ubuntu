@@ -132,17 +132,16 @@ VSCode has many extensions. You can find a list of pre-installed extensions at [
 - [Remote - WSL by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
 - [Auto Rename Tag by Jun Han](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 - [Auto Close Tag by Jun Han](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
-
-## [ZSH](https## [Anaconda](https://www.anaconda.com/)
+## [Anaconda](https://www.anaconda.com/)
 ### Installing
-Type the following command to download Windows Terminal in temp folder and install it then press Enter:
+Type the following command to download Anaconda in tmp folder and install it then press Enter:
 - For x86:
 ```zsh
-cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh --output anaconda.sh && bash anaconda.sh
+sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh --output anaconda.sh && bash anaconda.sh
 ```
 - For ARM64:
 ```zsh
-cd /tmp && https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-aarch64.sh --output anaconda.sh && bash anaconda.sh
+apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6cd /tmp && https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-aarch64.sh --output anaconda.sh && bash anaconda.sh
 ```
 You’ll receive these following outputs:
 ```
