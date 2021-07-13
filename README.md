@@ -5,7 +5,6 @@
   - From Windows
   - From Linux
 - [VSCode](#VSCode)
-  - [Requirements](#requirements-2)
   - [Installing](#installing)
     - [Method1 Using Setup File](#method1-using-setup-files)
     - [Method2 Using Windows Package Manager](#method2-using-windows-package-manager)
@@ -34,10 +33,21 @@
     - [robbyrussell](#robbyrussell)
 - VIM => coming soon
 ## [VSCode](https://github.com/microsoft/vscode)
-### Requirements
-.NET Framework 4.5.2 or higher is required for VS Code. You can download latest version from [here](https://dotnet.microsoft.com/download/dotnet-framework)
 ### Installing
-###### Method1 Using Setup Files
+###### Method1 Using Ubuntu's Advanced Packaging (APT)
+Open Terminal and Type the following command to install Visual Studio Code:
+
+```zsh
+sudo apt update && sudo apt install software-properties-common apt-transport-https && wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ & sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list' && sudo apt update && sudo apt install code
+```
+###### Method2 Using
+To use snap, you should install it first
+
+###### Installing Snap
+
+
+Then open Powershell or Command Prompt and Type the following command to install Visual Studio Code
+###### Method3 Using Setup Files
 Go to [here](https://code.visualstudio.com/download) and download the latest installer for your Windows and follow the installation wizard to set up VS Code.
 
 ###### Method2 Using Windows Package Manager
