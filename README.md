@@ -1,9 +1,21 @@
 # How to install Ubuntu 20.04 + VScode + Anaconda + Git + ZSH
 ## Table of Contents
--[Installing Ubuntu]()
-  - From Mac
-  - From Windows
-  - From Linux
+- Ubuntu
+  - 
+    - From Mac
+      - Create a bootable USB stick on macOS
+      - Resize Partition
+      - Boot
+    - From Windows
+      - Create a bootable USB stick on Windows
+      - shrink partition
+      - Boot
+      - From Linux 
+    - Create a bootable USB stick on Ubuntu
+      - Resize Partition
+      - Boot
+Installing
+
 - [VSCode](#VSCode)
   - [Installing](#installing)
     - [Method1 Using Setup File](#method1-using-setup-files)
