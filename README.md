@@ -201,6 +201,11 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ```zsh
 sed -i 's/ZSH_THEME=".*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' ~/.zshrc
 ```
+- Configuring
+To run Powerlevel10k configuration wizard again, type the following commands:
+```zsh
+p10k configure
+```
 ![powerlevel10k](https://raw.githubusercontent.com/malekifar/wsl/main/screenshots/powerlevel10k.jpg)
 ###### Agnoster
 - Enabling
