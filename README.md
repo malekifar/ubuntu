@@ -50,13 +50,10 @@ Installing
 Open Terminal and Type the following command to install Visual Studio Code:
 
 ```zsh
-sudo apt update && sudo apt install software-properties-common apt-transport-https && wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ & sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list' && sudo apt update && sudo apt install code
+sudo apt update && sudo apt install software-properties-common apt-transport-https && cd /tmp && wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ && sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list' && sudo apt update && sudo apt install code
 ```
 ###### Method2 Using
 To use snap, you should install it first
-
-###### Installing Snap
-
 
 Then open Powershell or Command Prompt and Type the following command to install Visual Studio Code
 ###### Method3 Using Setup Files
@@ -149,7 +146,7 @@ VSCode has many extensions. You can find a list of pre-installed extensions at [
 Type the following command to download Anaconda in tmp folder and install it then press Enter:
 - For x86:
 ```zsh
-sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh --output anaconda.sh && bash anaconda.sh
+sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 && cd /tmp && wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh -O anaconda.sh && bash anaconda.sh
 ```
 - For ARM64:
 ```zsh
