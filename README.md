@@ -168,7 +168,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.zsh/.fzf && ~/.zsh/.f
 ```
 ###### [autojump](https://github.com/wting/autojump)
 ```zsh
-git clone git://github.com/wting/autojump.git ~/.zsh/autojump && cd ~/.zsh/autojump && ./install.py && echo "source ~/.autojump/etc/profile.d/autojump.sh" >> ~/.zshrc
+git clone git://github.com/wting/autojump.git ~/.zsh/autojump && cd ~/.zsh/autojump && ./install.py && echo "source ~/.autojump/etc/profile.d/autojump.sh" >> ~/.zshrc && pkill terminal
 ```
 ###### [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 ```zsh
