@@ -126,7 +126,6 @@ VSCode has many extensions. You can find a list of pre-installed extensions at [
 - [Material Theme by Equinusocio](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)
 - [Noctis by Liviu Schera](https://marketplace.visualstudio.com/items?itemName=liviuschera.noctis)
 - [Solarized by Ryan Olson](https://marketplace.visualstudio.com/items?itemName=ryanolsonx.solarized)
-- [Remote - WSL by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
 - [Auto Rename Tag by Jun Han](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 - [Auto Close Tag by Jun Han](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
 
