@@ -191,9 +191,19 @@ git clone https://github.com/zdharma/fast-syntax-highlighting ${ZSH_CUSTOM:=~/.o
 sed -i 's/plugins=\(.*\)/plugins=\(git docker zsh-completions colored-man-pages fast-syntax-highlighting colorize dash command-not-found\)/g' ~/.zshrc
 ```
 ### ZSH Fonts
+- Installing
 ```zsh
 cd /tmp && wget https://github.com/malekifar/wsl/releases/download/v1.0/Fonts.zip -O Fonts.zip && unzip Fonts.zip && sudo bash install.sh
 ```
+- Enabling
+```zsh
+sudo apt install notify-osd overlay-scrollbar unity-tweak-tool unity-lens-applications && unity-tweak-tool
+```
+### Color Schemes
+```zsh
+sudo apt-get install dconf-cli uuid-runtime && bash -c "$(wget -qO- https://git.io/vQgMr)"
+```
+Type `ALL` to installing all color schemes.
 ### ZSH Themes
 We are going to make our color pretty and prompt useful. There are a lot of themes in oh-my-zsh, you can see them [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes):
 ###### [PowerLevel10K](https://github.com/romkatv/powerlevel10k)(recommended)
