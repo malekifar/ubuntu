@@ -1,6 +1,6 @@
 # How to install Ubuntu 20.04 + VScode + Anaconda + Git + ZSH
 ## Table of Contents
-- Ubuntu
+- Ubuntu => Coming soon
   - 
     - From Mac
       - Create a bootable USB stick on macOS
@@ -44,6 +44,8 @@ Installing
     - [Agnoster](#agnoster)
     - [robbyrussell](#robbyrussell)
 - VIM => coming soon
+## [VSCode](https://github.com/microsoft/vscode)
+### Installing
 ###### Method1 Using Ubuntu's Advanced Packaging (APT)
 Open Terminal and Type the following command to install Visual Studio Code:
 ```zsh
@@ -53,6 +55,81 @@ sudo apt update && sudo apt install software-properties-common curl apt-transpor
 ```
 sudo snap install --classic code
 ```
+### Configuring
+To edit your VS Code configuration in JSON, open the command palette (Go to View -> Command Palette, or Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>), type `Open Settings JSON` and select `Preferences: Open Settings (JSON)`:
+
+![search setting.json](https://raw.githubusercontent.com/malekifar/wsl/main/screenshots/search%20setting.json.jpg)
+
+The `settings.json` file with all the non-default VS Code settings will open:
+
+![setting.json](https://raw.githubusercontent.com/malekifar/wsl/main/screenshots/setting.json.jpg)
+
+You can use these additional settings:
+```
+"editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+"editor.renderWhitespace": "all",
+"diffEditor.ignoreTrimWhitespace": false,
+"update.mode": "none",
+"extensions.autoUpdate": false,
+"window.title": "[${folderName}]${separator}${dirty}${activeEditorShort}${separator}${appName}",
+"files.trimTrailingWhitespace": true,
+"editor.tabSize": 2
+```
+- `editor.wordSeparators`: I removed the — from the word separators so I can select identifiers with a — in it via double-click on a word (sometimes these can be used in bash scripts)
+- `editor.renderWhitespace`: I always want to see all the spaces in my source files
+- `diffEditor.ignoreTrimWhitespace` : when I do a git merge, I want to see the differences due to space changes
+- `update.mode` and `extensions.autoUpdate`: I don’t want the extensions to autoupdate, I need to control when they are updated as sometimes with WSL they break
+- `window.title` : I added the [foldername] to the beginning of the window title, so I can recognize different go projects instances by their folder names (I can have 5 or 6 open at the same time, this is a saviour!)
+- `files.trimTrailingWhitespace` : when a file is saved, all the extra spaces at the end of a line are trimmed out
+- `editor.tabSize`: I like to use 2 spaces for tabs
+
+Add the ones you want to use to your settings.json file and save it:
+
+![addedsetting.json](https://raw.githubusercontent.com/malekifar/wsl/main/screenshots/addedsetting.json.jpg)
+### Install an extension
+To install an extension, select the Install button. Once the installation is complete, the Install button will change to the Manage gear button.
+
+![Install an extension](https://raw.githubusercontent.com/malekifar/wsl/main/screenshots/Install%20an%20extension.jpg)
+### Extensions
+VSCode has many extensions. You can find a list of pre-installed extensions at [here](https://marketplace.visualstudio.com)
+### Best Extensions
+- [vscode-icons by VSCode Icons Team](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
+- [Project Manager by Alessandro Fragnani](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
+- [Git Graph by mhutchie](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+- [Git Tree Compare by Maik Riechert](https://marketplace.visualstudio.com/items?itemName=letmaik.git-tree-compare)
+- [GitLens — Git supercharged by Eric Amodio](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [Git History by Don Jayamanne](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
+- [Python by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Python Type Hint by njqdev](https://marketplace.visualstudio.com/items?itemName=njqdev.vscode-python-typehint)
+- [Pyright by ms-pyright](https://marketplace.visualstudio.com/items?itemName=ms-pyright.pyright&ssr=false#overview)
+- [Python Indent by Kevin Rose](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+- [Sort lines by Daniel Imms](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
+- [Sourcery by sourcery](https://marketplace.visualstudio.com/items?itemName=sourcery.sourcery)
+- [Tabnine AI Code Completion by TabNine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode&ssr=false)
+- [Python Preview by dongli](https://marketplace.visualstudio.com/items?itemName=dongli.python-preview)
+- [AREPL for python by Almenon](https://marketplace.visualstudio.com/items?itemName=almenon.arepl)
+- [Python Test Explorer for Visual Studio Code by Little Fox Team](https://marketplace.visualstudio.com/items?itemName=LittleFoxTeam.vscode-python-test-adapter)
+- [Python Docstring Generator by Nils Werner](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
+- [python snippets by Ferhat Yalçın](https://marketplace.visualstudio.com/items?itemName=frhtylcn.pythonsnippets)
+- [Visual Studio IntelliCode by Microsoft](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+- [Jupyter by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- [Django by Baptiste Darthenay](https://marketplace.visualstudio.com/items?itemName=batisteo.vscode-django)
+- [Code Spell Checker by Street Side Software](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [Bookmarks by Alessandro Fragnani](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)
+- [Better Comments by Aaron Bond](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+- [Settings Sync by Shan Khan](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
+- [Peacock by John Papa](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock&ssr=false#overview)
+- [Bracket Pair Colorizer 2 by CoenraadS](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
+- [Indent-Rainbow by oderwat](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
+- [Indenticator by SirTori](https://marketplace.visualstudio.com/items?itemName=SirTori.indenticator)
+- [Dash by Budi Irawan](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-dash)
+- [Material Theme by Equinusocio](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)
+- [Noctis by Liviu Schera](https://marketplace.visualstudio.com/items?itemName=liviuschera.noctis)
+- [Solarized by Ryan Olson](https://marketplace.visualstudio.com/items?itemName=ryanolsonx.solarized)
+- [Remote - WSL by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
+- [Auto Rename Tag by Jun Han](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+- [Auto Close Tag by Jun Han](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
+
 ## [Anaconda](https://www.anaconda.com/)
 ### Installing
 Type the following command to download Anaconda in tmp folder and install it then press Enter:
@@ -143,7 +220,7 @@ echo $SHELL && $SHELL --version
 
 you should get the following results:
 
-![shell version](https://raw.githubusercontent.com/malekifar/wsl/main/screenshots/shell%20version.jpg)
+![shell version](https://raw.githubusercontent.com/malekifar/ubuntu/main/Screenshots/SHELL%20Version.png)
 
 ### Installing [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 Now we can install oh-my-zsh
@@ -193,17 +270,18 @@ sed -i 's/plugins=\(.*\)/plugins=\(git docker zsh-completions colored-man-pages 
 ### ZSH Fonts
 - Installing
 ```zsh
-cd /tmp && wget https://github.com/malekifar/wsl/releases/download/v1.0/Fonts.zip -O Fonts.zip && unzip Fonts.zip && sudo bash install.sh
+cd /tmp && wget https://github.com/malekifar/ubuntu/releases/download/v1.0/Fonts.zip -O Fonts.zip && unzip Fonts.zip && sudo bash install.sh
 ```
 - Enabling
 ```zsh
 sudo apt install notify-osd overlay-scrollbar unity-tweak-tool unity-lens-applications && unity-tweak-tool
 ```
+![Unity](https://raw.githubusercontent.com/malekifar/ubuntu/main/Screenshots/unity.jpg)
 ### Color Schemes
 ```zsh
 sudo apt-get install dconf-cli uuid-runtime && bash -c "$(wget -qO- https://git.io/vQgMr)"
 ```
-Type `ALL` to installing all color schemes.
+Type `ALL` to installing all color schemes. You can change color scheme by changing profile in terminal.
 ### ZSH Themes
 We are going to make our color pretty and prompt useful. There are a lot of themes in oh-my-zsh, you can see them [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes):
 ###### [PowerLevel10K](https://github.com/romkatv/powerlevel10k)(recommended)
@@ -220,7 +298,7 @@ To run Powerlevel10k configuration wizard again, type the following commands:
 ```zsh
 p10k configure
 ```
-![powerlevel10k](https://raw.githubusercontent.com/malekifar/wsl/main/screenshots/powerlevel10k.jpg)
+![powerlevel10k](https://raw.githubusercontent.com/malekifar/ubuntu/main/Screenshots/powerlevel10k.png)
 ###### Agnoster
 - Enabling
 ```zsh
@@ -230,9 +308,9 @@ sed -i 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/g' ~/.zshrc
 ```zsh
 echo "export DEFAULT_USER=$(whoami)" >> ~/.zshrc
 ```
-![Agnoster](https://raw.githubusercontent.com/malekifar/wsl/main/screenshots/agnoster.jpg)
+![Agnoster](https://raw.githubusercontent.com/malekifar/ubuntu/main/Screenshots/agnoster.png)
 ###### robbyrussell
 ```zsh
 sed -i 's/ZSH_THEME=".*"/ZSH_THEME="robbyrussell"/g' ~/.zshrc
 ```
-![robbyrussell](https://raw.githubusercontent.com/malekifar/wsl/main/screenshots/robbyrussell.jpg)
+![robbyrussell](https://raw.githubusercontent.com/malekifar/ubuntu/main/Screenshots/robbyrussell.png)
