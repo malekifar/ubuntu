@@ -153,52 +153,50 @@ sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaco
 sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-aarch64.sh --output anaconda.sh && bash anaconda.sh
 ```
 You’ll receive these following outputs in normally mode:
-```
-Output:
 
-Welcome to Anaconda3 2021.05
+> Output:
+> 
+> Welcome to Anaconda3 2021.05
+>
+> In order to continue the installation process, please review the license agreement\
+> Please, press ENTER to continue
 
-In order to continue the installation process, please review the license
-agreement.
-Please, press ENTER to continue
->>>  
-```
 Press <kbd>Enter</kbd> to continue and then press <kbd>Enter</kbd> to read through the license. Once you’re done reading the license, you’ll be prompted to approve the license terms:
-```
-Output:
 
-Do you approve the license terms? [yes|no]
-```
+> Output:
+> 
+> Do you approve the license terms? [yes|no]
+
 As long as you agree, type `yes`.
-```
-Output:
 
-Anaconda3 will now be installed into this location:
-/home/usename/anaconda3
+> Output:
+> 
+> Anaconda3 will now be installed into this location:\
+> /home/usename/anaconda3
+> 
+>   - Press ENTER to confirm the location
+>   - Press CTRL-C to abort the installation
+>   - Or specify a different location below
+> 
+> [/home/username/anaconda3] >>> 
 
-  - Press ENTER to confirm the location
-  - Press CTRL-C to abort the installation
-  - Or specify a different location below
-
-[/home/username/anaconda3] >>> 
-```
 At this point, you’ll be prompted to choose the location of the installation. You can press <kbd>Enter</kbd> to accept the default location, or specify a different location to modify it.
-```
-output:
 
-Preparing transaction: done
-Executing transaction: done
-installation finished.
-Do you wish the installer to initialize Anaconda3
-by running conda init? [yes|no]
-[no] >>> 
-```
+> output:
+> 
+> Preparing transaction: done\
+> Executing transaction: done\
+> installation finished.\
+> Do you wish the installer to initialize Anaconda3\
+> by running conda init? [yes|no]\
+> [no] >>> 
+
 Type `yes` so that you can initialize Anaconda3. You’ll receive some output that states changes made in various directories. One of the lines you receive will thank you for installing Anaconda.
-```
-Output:
 
-Thank you for installing Anaconda3!
-```
+> Output:
+> 
+> Thank you for installing Anaconda3!
+
 ### Conda init
 ```zsh
 source ~/anaconda3/etc/profile.d/conda.sh && conda init bash && conda init zsh
@@ -224,14 +222,10 @@ chsh -s $(which zsh) && reboot
 Open a new terminal and the initial zsh prompt will show up, signaling that zsh is now the default shell. At this point pick <kbd>2</kbd> — it will populate the zsh configuration file `~/.zshrc` with defaults.
 
 Let’s check again that zsh is the default shell:
-
-```zsh
-echo $SHELL && $SHELL --version
-```
-
-you should get the following results:
-
-![shell version](https://raw.githubusercontent.com/malekifar/ubuntu/main/Screenshots/SHELL%20Version.png)
+> output:
+> 
+> /usr/bin/zsh\
+> zsh 5.8 (x86_64-ubuntu-linux-gnu)
 
 ### Installing [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 Now we can install oh-my-zsh
