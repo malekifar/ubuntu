@@ -134,6 +134,16 @@ VSCode has many extensions. You can find a list of pre-installed extensions at [
 ## [Anaconda](https://www.anaconda.com/)
 ### Installing
 Type the following command to download Anaconda in tmp folder and install it then press Enter:
+### Silent Mode(recommended)
+- For x86:
+```zsh
+sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh --output anaconda.sh && bash anaconda.sh -b -p $HOME/anaconda
+```
+- For ARM64:
+```zsh
+sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-aarch64.sh --output anaconda.sh && bash anaconda.sh -b -p $HOME/anaconda
+```
+### Normally Mode
 - For x86:
 ```zsh
 sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh --output anaconda.sh && bash anaconda.sh
@@ -142,7 +152,7 @@ sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaco
 ```zsh
 sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-aarch64.sh --output anaconda.sh && bash anaconda.sh
 ```
-You’ll receive these following outputs:
+You’ll receive these following outputs in normally mode:
 ```
 Output:
 
@@ -264,20 +274,14 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 ```zsh
 git clone https://github.com/zdharma/fast-syntax-highlighting ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting && echo "source ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" >> ~/.zshrc
 ```
-###### [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git), [docker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker), [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages), [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize), [dash](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dash) & [command-not-found](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found)
+###### [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git), [docker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker), [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages), [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize), [dash](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dash) & [command-not-found](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found), [extract](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract)
 ```zsh
-sed -i 's/plugins=\(.*\)/plugins=\(git docker zsh-completions colored-man-pages fast-syntax-highlighting colorize dash command-not-found\)/g' ~/.zshrc
+sed -i 's/plugins=\(.*\)/plugins=\(git docker zsh-completions colored-man-pages fast-syntax-highlighting colorize dash command-not-found extract\)/g' ~/.zshrc
 ```
 ### ZSH Fonts
-- Installing
 ```zsh
 cd /tmp && wget https://github.com/malekifar/ubuntu/releases/download/v1.0/Fonts.zip -O Fonts.zip && unzip Fonts.zip && sudo bash install.sh
 ```
-- Enabling
-```zsh
-sudo apt install notify-osd overlay-scrollbar unity-tweak-tool unity-lens-applications && unity-tweak-tool
-```
-![Unity](https://raw.githubusercontent.com/malekifar/ubuntu/main/Screenshots/unity.jpg)
 ### Color Schemes
 ```zsh
 sudo apt-get install dconf-cli uuid-runtime && bash -c "$(wget -qO- https://git.io/vQgMr)"
