@@ -217,7 +217,7 @@ sudo apt update -y && sudo apt install -y zsh
 Now set zsh to be your default shell:
 this command reboot your computer
 ```zsh
-chsh -s $(which zsh) ; sudo sed -i 's/\/usr\/bin\/bash/\/usr\/bin\/zsh/g' /ect/passwd ; sudo sed -i 's/\/bin\/bash/\/bin\/zsh/g' /ect/passwd ; reboot
+chsh -s $(which zsh) ; sudo sed -i 's/\/usr\/bin\/bash/\/usr\/bin\/zsh/g' /etc/passwd ; sudo sed -i 's/\/bin\/bash/\/bin\/zsh/g' /etc/passwd ; reboot
 ```
 Open a new terminal and the initial zsh prompt will show up, signaling that zsh is now the default shell. At this point pick <kbd>2</kbd> — it will populate the zsh configuration file `~/.zshrc` with defaults.
 
