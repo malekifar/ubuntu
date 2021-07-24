@@ -199,7 +199,7 @@ Type `yes` so that you can initialize Anaconda3. You’ll receive some output th
 
 ### Conda init
 ```zsh
-source ~/anaconda3/etc/profile.d/conda.sh && conda init bash && conda init zsh
+source ~/anaconda3/etc/profile.d/conda.sh && conda init bash
 ```
 ## [Git](https://github.com/git/git)
 Install Git using apt-get:
@@ -217,7 +217,7 @@ sudo apt update && sudo apt install zsh
 Now set zsh to be your default shell:
 this command reboot your computer
 ```zsh
-chsh -s $(which zsh) && reboot
+chsh -s $(which zsh) && sudo sed -i 's/\/usr\/bin\/bash/\/usr\/bin\/zsh/g' /ect/passwd && sudo sed -i 's/\/bin\/bash/\/bin\/zsh/g' /ect/passwd && reboot
 ```
 Open a new terminal and the initial zsh prompt will show up, signaling that zsh is now the default shell. At this point pick <kbd>2</kbd> — it will populate the zsh configuration file `~/.zshrc` with defaults.
 
