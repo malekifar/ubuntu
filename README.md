@@ -199,7 +199,7 @@ Type `yes` so that you can initialize Anaconda3. You’ll receive some output th
 
 ### Conda init
 ```zsh
-source ~/anaconda3/etc/profile.d/conda.sh && conda init bash
+source ~/anaconda3/etc/profile.d/conda.sh ; source ~/anaconda/etc/profile.d/conda.sh ; conda init bash 
 ```
 ## [Git](https://github.com/git/git)
 Install Git using apt-get:
@@ -217,7 +217,7 @@ sudo apt update && sudo apt install zsh
 Now set zsh to be your default shell:
 this command reboot your computer
 ```zsh
-chsh -s $(which zsh) && sudo sed -i 's/\/usr\/bin\/bash/\/usr\/bin\/zsh/g' /ect/passwd && sudo sed -i 's/\/bin\/bash/\/bin\/zsh/g' /ect/passwd && reboot
+chsh -s $(which zsh) ; sudo sed -i 's/\/usr\/bin\/bash/\/usr\/bin\/zsh/g' /ect/passwd ; sudo sed -i 's/\/bin\/bash/\/bin\/zsh/g' /ect/passwd ; reboot
 ```
 Open a new terminal and the initial zsh prompt will show up, signaling that zsh is now the default shell. At this point pick <kbd>2</kbd> — it will populate the zsh configuration file `~/.zshrc` with defaults.
 
@@ -239,7 +239,7 @@ Notice that oh-my-zsh updated your `~/.bashrc` file and made a backup of the old
 OK, we are readty to customize oh-my-zsh next.
 ### Conda init
 ```zsh
-source ~/anaconda3/etc/profile.d/conda.sh && conda init zsh
+source ~/anaconda3/etc/profile.d/conda.sh ; source ~/anaconda/etc/profile.d/conda.sh ; conda init zsh
 ```
 ### ZSH Plugins
 Oh-My-ZSH has many plugins. You can find a list of pre-installed plugins at [here](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins)
