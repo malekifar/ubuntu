@@ -211,7 +211,7 @@ sudo apt-get update && sudo apt-get install git
 Type the following commands to update apt and install zsh then press Enter:
 
 ```zsh
-sudo apt update && sudo apt install zsh
+sudo apt update -y && sudo apt install -y zsh
 ```
 
 Now set zsh to be your default shell:
@@ -231,7 +231,7 @@ Let’s check again that zsh is the default shell:
 Now we can install oh-my-zsh
 
 ```zsh
-sudo apt install curl && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt install -y curl && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 Notice that oh-my-zsh updated your `~/.bashrc` file and made a backup of the old one. Also notice that the prompt changed now, it is just your username.
