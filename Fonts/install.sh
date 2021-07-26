@@ -26,3 +26,4 @@ if which fc-cache >/dev/null 2>&1 ; then
 fi
 
 echo "Powerline fonts installed to $font_dir"
+/bin/gsettings set org.gnome.desktop.interface monospace-font-name "MesloLGS NF Bold 13"

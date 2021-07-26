@@ -1,7 +1,7 @@
 # How to install Ubuntu 20.04 + VScode + Anaconda + Git + ZSH
 ## Table of Contents
 - Ubuntu => Coming soon
-  - 
+  - Preparation
     - From Mac
       - Create a bootable USB stick on macOS
       - Resize Partition
@@ -10,11 +10,11 @@
       - Create a bootable USB stick on Windows
       - shrink partition
       - Boot
-      - From Linux 
-    - Create a bootable USB stick on Ubuntu
+    - From Linux 
+      - Create a bootable USB stick on Ubuntu
       - Resize Partition
       - Boot
-Installing
+  - Installing
 
 - [VSCode](#VSCode)
   - [Installing](#installing)
@@ -134,6 +134,16 @@ VSCode has many extensions. You can find a list of pre-installed extensions at [
 ## [Anaconda](https://www.anaconda.com/)
 ### Installing
 Type the following command to download Anaconda in tmp folder and install it then press Enter:
+### Silent Mode(recommended)
+- For x86:
+```zsh
+sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh --output anaconda.sh && bash anaconda.sh -b -p $HOME/anaconda
+```
+- For ARM64:
+```zsh
+sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-aarch64.sh --output anaconda.sh && bash anaconda.sh -b -p $HOME/anaconda
+```
+### Normally Mode
 - For x86:
 ```zsh
 sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh --output anaconda.sh && bash anaconda.sh
@@ -142,56 +152,54 @@ sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaco
 ```zsh
 sudo apt install curl && cd /tmp && curl https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-aarch64.sh --output anaconda.sh && bash anaconda.sh
 ```
-You’ll receive these following outputs:
-```
-Output:
+You’ll receive these following outputs in normally mode:
 
-Welcome to Anaconda3 2021.05
+> Output:
+> 
+> Welcome to Anaconda3 2021.05
+>
+> In order to continue the installation process, please review the license agreement\
+> Please, press ENTER to continue
 
-In order to continue the installation process, please review the license
-agreement.
-Please, press ENTER to continue
->>>  
-```
 Press <kbd>Enter</kbd> to continue and then press <kbd>Enter</kbd> to read through the license. Once you’re done reading the license, you’ll be prompted to approve the license terms:
-```
-Output:
 
-Do you approve the license terms? [yes|no]
-```
+> Output:
+> 
+> Do you approve the license terms? [yes|no]
+
 As long as you agree, type `yes`.
-```
-Output:
 
-Anaconda3 will now be installed into this location:
-/home/usename/anaconda3
+> Output:
+> 
+> Anaconda3 will now be installed into this location:\
+> /home/usename/anaconda3
+> 
+>   - Press ENTER to confirm the location
+>   - Press CTRL-C to abort the installation
+>   - Or specify a different location below
+> 
+> [/home/username/anaconda3] >>> 
 
-  - Press ENTER to confirm the location
-  - Press CTRL-C to abort the installation
-  - Or specify a different location below
-
-[/home/username/anaconda3] >>> 
-```
 At this point, you’ll be prompted to choose the location of the installation. You can press <kbd>Enter</kbd> to accept the default location, or specify a different location to modify it.
-```
-output:
 
-Preparing transaction: done
-Executing transaction: done
-installation finished.
-Do you wish the installer to initialize Anaconda3
-by running conda init? [yes|no]
-[no] >>> 
-```
+> output:
+> 
+> Preparing transaction: done\
+> Executing transaction: done\
+> installation finished.\
+> Do you wish the installer to initialize Anaconda3\
+> by running conda init? [yes|no]\
+> [no] >>> 
+
 Type `yes` so that you can initialize Anaconda3. You’ll receive some output that states changes made in various directories. One of the lines you receive will thank you for installing Anaconda.
-```
-Output:
 
-Thank you for installing Anaconda3!
-```
+> Output:
+> 
+> Thank you for installing Anaconda3!
+
 ### Conda init
 ```zsh
-source ~/anaconda3/etc/profile.d/conda.sh && conda init bash && conda init zsh
+source ~/anaconda3/etc/profile.d/conda.sh ; source ~/anaconda/etc/profile.d/conda.sh ; conda init bash 
 ```
 ## [Git](https://github.com/git/git)
 Install Git using apt-get:
@@ -203,31 +211,27 @@ sudo apt-get update && sudo apt-get install git
 Type the following commands to update apt and install zsh then press Enter:
 
 ```zsh
-sudo apt update && sudo apt install zsh
+sudo apt update -y && sudo apt install -y zsh
 ```
 
 Now set zsh to be your default shell:
 this command reboot your computer
 ```zsh
-chsh -s $(which zsh) && reboot
+chsh -s $(which zsh) ; sudo sed -i 's/\/usr\/bin\/bash/\/usr\/bin\/zsh/g' /etc/passwd ; sudo sed -i 's/\/bin\/bash/\/bin\/zsh/g' /etc/passwd ; reboot
 ```
 Open a new terminal and the initial zsh prompt will show up, signaling that zsh is now the default shell. At this point pick <kbd>2</kbd> — it will populate the zsh configuration file `~/.zshrc` with defaults.
 
 Let’s check again that zsh is the default shell:
-
-```zsh
-echo $SHELL && $SHELL --version
-```
-
-you should get the following results:
-
-![shell version](https://raw.githubusercontent.com/malekifar/ubuntu/main/Screenshots/SHELL%20Version.png)
+> output:
+> 
+> /usr/bin/zsh\
+> zsh 5.8 (x86_64-ubuntu-linux-gnu)
 
 ### Installing [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 Now we can install oh-my-zsh
 
 ```zsh
-sudo apt install curl && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt install -y curl && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 Notice that oh-my-zsh updated your `~/.bashrc` file and made a backup of the old one. Also notice that the prompt changed now, it is just your username.
@@ -235,7 +239,7 @@ Notice that oh-my-zsh updated your `~/.bashrc` file and made a backup of the old
 OK, we are readty to customize oh-my-zsh next.
 ### Conda init
 ```zsh
-source ~/anaconda3/etc/profile.d/conda.sh && conda init zsh
+source ~/anaconda3/etc/profile.d/conda.sh ; source ~/anaconda/etc/profile.d/conda.sh ; conda init zsh
 ```
 ### ZSH Plugins
 Oh-My-ZSH has many plugins. You can find a list of pre-installed plugins at [here](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins)
@@ -264,20 +268,14 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 ```zsh
 git clone https://github.com/zdharma/fast-syntax-highlighting ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting && echo "source ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" >> ~/.zshrc
 ```
-###### [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git), [docker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker), [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages), [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize), [dash](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dash) & [command-not-found](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found)
+###### [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git), [docker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker), [colored-man-pages](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages), [colorize](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize), [dash](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dash) & [command-not-found](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found), [extract](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract)
 ```zsh
-sed -i 's/plugins=\(.*\)/plugins=\(git docker zsh-completions colored-man-pages fast-syntax-highlighting colorize dash command-not-found\)/g' ~/.zshrc
+sed -i 's/plugins=\(.*\)/plugins=\(git docker zsh-completions colored-man-pages fast-syntax-highlighting colorize dash command-not-found extract\)/g' ~/.zshrc
 ```
 ### ZSH Fonts
-- Installing
 ```zsh
 cd /tmp && wget https://github.com/malekifar/ubuntu/releases/download/v1.0/Fonts.zip -O Fonts.zip && unzip Fonts.zip && sudo bash install.sh
 ```
-- Enabling
-```zsh
-sudo apt install notify-osd overlay-scrollbar unity-tweak-tool unity-lens-applications && unity-tweak-tool
-```
-![Unity](https://raw.githubusercontent.com/malekifar/ubuntu/main/Screenshots/unity.jpg)
 ### Color Schemes
 ```zsh
 sudo apt-get install dconf-cli uuid-runtime && bash -c "$(wget -qO- https://git.io/vQgMr)"
