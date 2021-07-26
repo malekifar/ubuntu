@@ -52,4 +52,3 @@ zsh
 # configuring
 p10k configure
 
-
